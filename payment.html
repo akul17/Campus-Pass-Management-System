@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Pass Management - Payment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Transport Pass Management System</h1>
+        <nav>
+            <table width="100%" border="0">
+                <tr>
+                    <td align="left"><a href="dashboard.html">Dashboard</a></td>
+                    <td align="right"><a href="index.html">Logout</a></td>
+                </tr>
+            </table>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <h2>Pass Fee Payment</h2>
+        <p>Complete your payment to activate or renew your transport pass.</p>
+
+        <form action="view-pass.html" method="get">
+
+            <!-- Pass & Fare Details -->
+            <fieldset>
+                <legend><strong>Pass &amp; Fee Summary</strong></legend>
+                <br>
+                <div>
+                    <label for="passId">Application / Pass ID:</label>
+                    <input type="text" id="passId" name="passId" placeholder="e.g., TP-2026-0042" required>
+                </div>
+                <br>
+                <div>
+                    <label for="passHolderName">Cardholder / Applicant Name:</label>
+                    <input type="text" id="passHolderName" name="passHolderName" required>
+                </div>
+                <br>
+                <div>
+                    <label for="amount">Total Amount Payable (₹ / $):</label>
+                    <input type="number" id="amount" name="amount" placeholder="Amount">
+                </div>
+            </fieldset>
+
+            <br>
+
+            <!-- Payment Method Selection -->
+            <fieldset>
+                <legend><strong>Select Payment Method</strong></legend>
+                <br>
+                <div>
+                    <input type="radio" id="card" name="paymentMethod" value="card" onchange="togglePaymentMethod()" checked>
+                    <label for="card">Credit / Debit Card</label>
+
+                    <input type="radio" id="upi" name="paymentMethod" value="upi" onchange="togglePaymentMethod()">
+                    <label for="upi">UPI / QR Code</label>
+
+                    <input type="radio" id="netbanking" name="paymentMethod" value="netbanking" onchange="togglePaymentMethod()">
+                    <label for="netbanking">Net Banking</label>
+
+                    <input type="radio" id="wallet" name="paymentMethod" value="wallet" onchange="togglePaymentMethod()">
+                    <label for="wallet">Digital Wallet</label>
+                </div>
+            </fieldset>
+
+            <br>
+
+            <!-- Card Payment Details -->
+            <fieldset id="cardDetails">
+                <legend><strong>Card Details</strong></legend>
+                <br>
+                <div>
+                    <label for="cardNumber">Card Number:</label>
+                    <input type="text" id="cardNumber" name="cardNumber" maxlength="16"
+                        placeholder="1234 5678 9012 3456">
+                </div>
+                <br>
+                <div>
+                    <label for="nameOnCard">Name on Card:</label>
+                    <input type="text" id="nameOnCard" name="nameOnCard">
+                </div>
+                <br>
+                <div>
+                    <label for="expiryMonth">Expiry Date:</label>
+                    <select id="expiryMonth" name="expiryMonth">
+                        <option value="">Month</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <select id="expiryYear" name="expiryYear">
+                        <option value="">Year</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                        <option value="2031">2031</option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <label for="cvv">CVV / Security Code:</label>
+                    <input type="password" id="cvv" name="cvv" maxlength="4" size="4" placeholder="123">
+                </div>
+            </fieldset>
+
+            <br>
+
+            <!-- UPI Payment Details -->
+            <fieldset id="upiDetails">
+                <legend><strong>UPI Details</strong></legend>
+                <br>
+                <div>
+                    <label for="upiId">Virtual Payment Address (VPA / UPI ID):</label>
+                    <input type="text" id="upiId" name="upiId" placeholder="username@bank">
+                </div>
+            </fieldset>
+
+            <br>
+
+            <!-- Net Banking Details -->
+            <fieldset id="netbankingDetails">
+                <legend><strong>Net Banking</strong></legend>
+                <br>
+                <div>
+                    <label for="bank">Select Bank:</label>
+                    <select id="bank" name="bank">
+                        <option value="">-- Choose Your Bank --</option>
+                        <option value="sbi">State Bank of India</option>
+                        <option value="hdfc">HDFC Bank</option>
+                        <option value="icici">ICICI Bank</option>
+                        <option value="axis">Axis Bank</option>
+                        <option value="pnb">Punjab National Bank</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <br>
+
+            <!-- Security Check & Submit -->
+            <div>
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the payment terms and conditions.</label>
+            </div>
+
+            <br>
+
+            <div>
+                <button type="submit">Pay Now &amp; View Pass</button>
+                <button type="reset">Cancel</button>
+            </div>
+
+        </form>
+    </main>
+
+    <footer>
+        <hr>
+        <p>&copy; 2026 Transport Pass Management System</p>
+    </footer>
+
+    <script>
+        function togglePaymentMethod() {
+            const cardSelected = document.getElementById("card").checked;
+            const upiSelected = document.getElementById("upi").checked;
+            const netbankingSelected = document.getElementById("netbanking").checked;
+
+            const cardDetails = document.getElementById("cardDetails");
+            const upiDetails = document.getElementById("upiDetails");
+            const netbankingDetails = document.getElementById("netbankingDetails");
+
+            if (cardDetails) {
+                cardDetails.style.display = cardSelected ? "block" : "none";
+            }
+            if (upiDetails) {
+                upiDetails.style.display = upiSelected ? "block" : "none";
+            }
+            if (netbankingDetails) {
+                netbankingDetails.style.display = netbankingSelected ? "block" : "none";
+            }
+        }
+
+        // Initialize visibility on page load
+        togglePaymentMethod();
+    </script>
+
+</body>
+
+</html>

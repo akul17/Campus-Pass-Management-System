@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Pass Management - Update Route</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Transport Pass Management System</h1>
+        <nav>
+            <table width="100%" border="0">
+                <tr>
+                    <td align="left"><a href="dashboard.html">Dashboard</a></td>
+                    <td align="right"><a href="index.html">Logout</a></td>
+                </tr>
+            </table>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <h2>Update Transit Route</h2>
+        <p>Use this form to change or modify your existing transport pass source, destination, or route.</p>
+
+        <form action="dashboard.html" method="get">
+
+            <!-- Pass Identification -->
+            <fieldset>
+                <legend><strong>Pass Identification</strong></legend>
+                <br>
+                <div>
+                    <label for="passId">Pass Number / Application ID:</label>
+                    <input type="text" id="passId" name="passId" placeholder="e.g., TP-2026-0042" required>
+                </div>
+                <br>
+                <div>
+                    <label for="holderName">Pass Holder Full Name:</label>
+                    <input type="text" id="holderName" name="holderName" required>
+                </div>
+                <br>
+                <div>
+                    <label for="phone">Registered Mobile Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+            </fieldset>
+
+            <br>
+
+            <!-- Current Route Details -->
+            <fieldset>
+                <legend><strong>Current Route Details</strong></legend>
+                <br>
+                <div>
+                    <label for="currentSource">Current Source (Origin):</label>
+                    <input type="text" id="currentSource" name="currentSource" placeholder="Current starting stop" required>
+                </div>
+                <br>
+                <div>
+                    <label for="currentDest">Current Destination:</label>
+                    <input type="text" id="currentDest" name="currentDest" placeholder="Current ending stop" required>
+                </div>
+            </fieldset>
+
+            <br>
+
+            <!-- New Route Request -->
+            <fieldset>
+                <legend><strong>New Route Request</strong></legend>
+                <br>
+                <div>
+                    <label for="newSource">New Source (Starting Point):</label>
+                    <input type="text" id="newSource" name="newSource" placeholder="Enter new starting stop" required>
+                </div>
+                <br>
+                <div>
+                    <label for="newDest">New Destination (Ending Point):</label>
+                    <input type="text" id="newDest" name="newDest" placeholder="Enter new destination stop" required>
+                </div>
+                <br>
+                <div>
+                    <label for="reason">Reason for Route Change:</label>
+                    <select id="reason" name="reason" required>
+                        <option value="">-- Select Reason --</option>
+                        <option value="relocation">Residence Relocation</option>
+                        <option value="institution">Change in College / School / Workplace</option>
+                        <option value="route_closure">Existing Route Discontinued</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <label for="effectiveDate">Effective From Date:</label>
+                    <input type="date" id="effectiveDate" name="effectiveDate" required>
+                </div>
+                <br>
+                <div>
+                    <label for="proofDoc">Upload Address Proof / Supporting Document:</label>
+                    <input type="file" id="proofDoc" name="proofDoc" accept=".pdf,image/*">
+                </div>
+            </fieldset>
+
+            <br>
+
+            <!-- Declaration -->
+            <div>
+                <input type="checkbox" id="declaration" name="declaration" required>
+                <label for="declaration">I confirm that the new route information provided above is correct.</label>
+            </div>
+
+            <br>
+
+            <!-- Action Buttons -->
+            <div>
+                <button type="submit">Submit Route Update</button>
+                <button type="reset">Reset Form</button>
+            </div>
+
+        </form>
+    </main>
+
+    <footer>
+        <br>
+        <hr>
+        <p>&copy; 2026 Transport Pass Management System</p>
+    </footer>
+
+</body>
+</html>
+

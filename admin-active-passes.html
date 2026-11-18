@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Pass Management - Active Passes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Transport Pass Management System</h1>
+        <h3>Administrator Control Panel</h3>
+        <nav>
+            <table width="100%" border="0">
+                <tr>
+                    <td align="left"><a href="admin-dashboard.html">Dashboard</a></td>
+                    <td align="right"><a href="index.html">Logout</a></td>
+                </tr>
+            </table>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <h2>Active Passes</h2>
+        <p>Currently valid passes issued to commuters across all routes.</p>
+
+        <!-- Search Pass Form -->
+        <form action="#" method="get">
+            <fieldset>
+                <legend><strong>Search Active Passes</strong></legend>
+                <br>
+                <div>
+                    <label for="searchPass">Pass ID / Holder Name:</label>
+                    <input type="text" id="searchPass" name="searchPass" placeholder="e.g., TP-2026-0042">
+
+                    <button type="submit">Search</button>
+                    <button type="reset">Clear</button>
+                </div>
+            </fieldset>
+        </form>
+
+        <br>
+
+        <!-- Active Passes Table (Empty Template) -->
+        <table border="1" cellpadding="8" cellspacing="0">
+            <tr bgcolor="#e0e0e0">
+                <th>Pass ID</th>
+                <th>Holder Name</th>
+                <th>Category</th>
+                <th>Route</th>
+                <th>Valid From</th>
+                <th>Valid Till</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>TP-2026-0041</td>
+                <td>Akul Gupta</td>
+                <td>Student</td>
+                <td>Central Station to City University</td>
+                <td>01-11-2026</td>
+                <td>31-10-2027</td>
+                <td>Active</td>
+                <td><a href="view-pass.html">View</a></td>
+            </tr>
+        </table>
+    </main>
+
+    <footer>
+        <br>
+        <hr>
+        <p>&copy; 2026 Transport Pass Management System - Admin Portal</p>
+    </footer>
+
+</body>
+
+</html>

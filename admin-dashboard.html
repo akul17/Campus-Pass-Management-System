@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Pass Management - Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Transport Pass Management System</h1>
+        <h3>Administrator Control Panel</h3>
+        <nav>
+            <table width="100%" border="0">
+                <tr>
+                    <td align="left"><a href="admin-dashboard.html">Dashboard</a></td>
+                    <td align="right"><a href="index.html">Logout</a></td>
+                </tr>
+            </table>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <!-- Quick Summary Statistics -->
+        <section>
+            <h2>System Overview</h2>
+            <table border="1" cellpadding="8" cellspacing="0">
+                <tr bgcolor="#e0e0e0">
+                    <th>Total Passes</th>
+                    <th>Active Passes</th>
+                    <th>Pending Approvals</th>
+                    <th>Expired Passes</th>
+                </tr>
+                <tr align="center">
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            </table>
+        </section>
+
+        <br>
+        <hr>
+
+        <h2>Select an Administrator Option</h2>
+
+        <nav>
+            <ul>
+                <li>
+                    <h3>Approve Passes</h3>
+                    <p>Review new commuter pass applications, verify submitted documents, and approve or reject requests.</p>
+                    <a href="admin-approve-passes.html">Go to Approve Passes</a>
+                </li>
+                <br>
+                <li>
+                    <h3>View Active Passes</h3>
+                    <p>Search and manage all currently valid transport passes issued to commuters.</p>
+                    <a href="admin-active-passes.html">Go to Active Passes</a>
+                </li>
+                <br>
+                <li>
+                    <h3>View Expired Passes</h3>
+                    <p>Check passes that have completed their validity, send renewal notifications, or archive records.</p>
+                    <a href="admin-expired-passes.html">Go to Expired Passes</a>
+                </li>
+            </ul>
+        </nav>
+    </main>
+
+    <footer>
+        <br>
+        <hr>
+        <p>&copy; 2026 Transport Pass Management System - Admin Portal</p>
+    </footer>
+
+</body>
+</html>

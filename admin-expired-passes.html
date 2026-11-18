@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Pass Management - Expired Passes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Transport Pass Management System</h1>
+        <h3>Administrator Control Panel</h3>
+        <nav>
+            <table width="100%" border="0">
+                <tr>
+                    <td align="left"><a href="admin-dashboard.html">Dashboard</a></td>
+                    <td align="right"><a href="index.html">Logout</a></td>
+                </tr>
+            </table>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <h2>Expired Passes</h2>
+        <p>Passes whose validity has ended and require renewal or archiving.</p>
+
+        <!-- Search Form -->
+        <form action="#" method="get">
+            <fieldset>
+                <legend><strong>Search Expired Passes</strong></legend>
+                <br>
+                <div>
+                    <label for="searchExpired">Pass ID / Holder Name:</label>
+                    <input type="text" id="searchExpired" name="searchExpired" placeholder="e.g., TP-2025-0812">
+
+                    <button type="submit">Search</button>
+                    <button type="reset">Clear</button>
+                </div>
+            </fieldset>
+        </form>
+
+        <br>
+
+        <!-- Expired Passes Table (Empty Template) -->
+        <table border="1" cellpadding="8" cellspacing="0">
+            <tr bgcolor="#e0e0e0">
+                <th>Pass ID</th>
+                <th>Holder Name</th>
+                <th>Category</th>
+                <th>Route</th>
+                <th>Expired On</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td colspan="7" align="center">No expired passes found.</td>
+            </tr>
+        </table>
+    </main>
+
+    <footer>
+        <br>
+        <hr>
+        <p>&copy; 2026 Transport Pass Management System - Admin Portal</p>
+    </footer>
+
+</body>
+</html>
+

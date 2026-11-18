@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Pass Management - New Pass Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Transport Pass Management System</h1>
+        <nav>
+            <table width="100%" border="0">
+                <tr>
+                    <td align="left"><a href="dashboard.html">Dashboard</a></td>
+                    <td align="right"><a href="index.html">Logout</a></td>
+                </tr>
+            </table>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <h2>Apply for a New Pass</h2>
+        <p>Please fill out the form below with the required information to generate your transport pass.</p>
+
+        <form action="payment.html" method="get">
+
+            <!-- Personal Information Section -->
+            <fieldset>
+                <legend><strong>Personal Information</strong></legend>
+                <br>
+                <div>
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <br>
+                <div>
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <br>
+                <div>
+                    <label>Gender:</label>
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </div>
+                <br>
+                <div>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <br>
+                <div>
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <br>
+                <div>
+                    <label for="address">Residential Address:</label>
+                    <br>
+                    <textarea id="address" name="address" rows="3" cols="40" required></textarea>
+                </div>
+            </fieldset>
+
+            <br>
+
+            <!-- Pass & Route Information Section -->
+            <fieldset>
+                <legend><strong>Pass &amp; Route Details</strong></legend>
+                <br>
+                <div>
+                    <label for="passType">Pass Category:</label>
+                    <select id="passType" name="passType" required>
+                        <option value="">-- Select Category --</option>
+                        <option value="student">Student</option>
+                        <option value="general">General Commuter</option>
+                        <option value="employee">Faculty</option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <label for="source">Source (Starting Point):</label>
+                    <input type="text" id="source" name="source" placeholder="Enter starting station/stop" required>
+                </div>
+                <br>
+                <div>
+                    <label for="destination">Destination (Ending Point):</label>
+                    <input type="text" id="destination" name="destination" placeholder="Enter destination station/stop"
+                        required>
+                </div>
+                <br>
+                <div>
+                    <label for="duration">Pass Validity Duration:</label>
+                    <select id="duration" name="duration" required>
+                        <option value="">-- Select Duration --</option>
+                        <option value="1month">1 Month</option>
+                        <option value="3months">3 Months</option>
+                        <option value="6months">6 Months</option>
+                        <option value="1year">1 Year</option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <label for="startDate">Pass Effective From Date:</label>
+                    <input type="date" id="startDate" name="startDate" required>
+                </div>
+            </fieldset>
+
+            <br>
+
+            <!-- Verification & Documents Section -->
+            <fieldset>
+                <legend><strong>Document Verification</strong></legend>
+                <br>
+                <div>
+                    <label for="photo">Upload Passport Size Photo:</label>
+                    <input type="file" id="photo" name="photo" accept="image/*" required>
+                </div>
+                <br>
+                <div>
+                    <label for="idProof">Upload ID / Eligibility Proof (Aadhaar, Student ID, etc.):</label>
+                    <input type="file" id="idProof" name="idProof" accept=".pdf,image/*" required>
+                </div>
+            </fieldset>
+
+            <br>
+
+            <!-- Declaration -->
+            <div>
+                <input type="checkbox" id="declaration" name="declaration" required>
+                <label for="declaration">I declare that all the information provided above is true and accurate to the
+                    best of my knowledge.</label>
+            </div>
+
+            <br>
+
+            <!-- Actions -->
+            <div>
+                <button type="submit">Submit &amp; Proceed to Payment</button>
+                <button type="reset">Reset Form</button>
+            </div>
+
+        </form>
+    </main>
+
+    <footer>
+        <hr>
+        <p>&copy; 2026 Transport Pass Management System</p>
+    </footer>
+
+</body>
+
+</html>

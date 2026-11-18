@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Pass Management - Pending Pass Approvals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Transport Pass Management System</h1>
+        <h3>Administrator Control Panel</h3>
+        <nav>
+            <table width="100%" border="0">
+                <tr>
+                    <td align="left"><a href="admin-dashboard.html">Dashboard</a></td>
+                    <td align="right"><a href="index.html">Logout</a></td>
+                </tr>
+            </table>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <h2>Pending Pass Approvals</h2>
+        <p>Review new applicant details and verify submitted documents before approving.</p>
+
+        <!-- Search / Filter Form -->
+        <form action="#" method="get">
+            <fieldset>
+                <legend><strong>Filter Applications</strong></legend>
+                <br>
+                <div>
+                    <label for="filterAppId">Application ID:</label>
+                    <input type="text" id="filterAppId" name="filterAppId" placeholder="e.g., APP-2026-101">
+
+                    <label for="filterCategory">Category:</label>
+                    <select id="filterCategory" name="filterCategory">
+                        <option value="">All Categories</option>
+                        <option value="student">Student</option>
+                        <option value="general">General</option>
+                        <option value="senior">Senior Citizen</option>
+                    </select>
+
+                    <button type="submit">Filter</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </fieldset>
+        </form>
+
+        <br>
+
+        <!-- Applications Table (Empty Template) -->
+        <table border="1" cellpadding="8" cellspacing="0">
+            <tr bgcolor="#e0e0e0">
+                <th>Application ID</th>
+                <th>Applicant Name</th>
+                <th>Category</th>
+                <th>Route</th>
+                <th>Validity</th>
+                <th>Submitted Proof</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td colspan="8" align="center">No pending approvals found.</td>
+            </tr>
+        </table>
+    </main>
+
+    <footer>
+        <br>
+        <hr>
+        <p>&copy; 2026 Transport Pass Management System - Admin Portal</p>
+    </footer>
+
+</body>
+</html>
+
